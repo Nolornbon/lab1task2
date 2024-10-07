@@ -144,10 +144,10 @@ namespace lab1task2 {
 			this->radioButton4->AutoSize = true;
 			this->radioButton4->Location = System::Drawing::Point(3, 3);
 			this->radioButton4->Name = L"radioButton4";
-			this->radioButton4->Size = System::Drawing::Size(101, 20);
+			this->radioButton4->Size = System::Drawing::Size(108, 20);
 			this->radioButton4->TabIndex = 0;
 			this->radioButton4->TabStop = true;
-			this->radioButton4->Text = L"Stereometry";
+			this->radioButton4->Text = L"Stereometry1";
 			this->radioButton4->UseVisualStyleBackColor = true;
 			this->radioButton4->CheckedChanged += gcnew System::EventHandler(this, &MyForm1::radioButton4_CheckedChanged);
 			// 
@@ -156,33 +156,36 @@ namespace lab1task2 {
 			this->radioButton5->AutoSize = true;
 			this->radioButton5->Location = System::Drawing::Point(3, 58);
 			this->radioButton5->Name = L"radioButton5";
-			this->radioButton5->Size = System::Drawing::Size(103, 20);
+			this->radioButton5->Size = System::Drawing::Size(108, 20);
 			this->radioButton5->TabIndex = 1;
 			this->radioButton5->TabStop = true;
-			this->radioButton5->Text = L"radioButton5";
+			this->radioButton5->Text = L"Stereometry2";
 			this->radioButton5->UseVisualStyleBackColor = true;
+			this->radioButton5->CheckedChanged += gcnew System::EventHandler(this, &MyForm1::radioButton5_CheckedChanged);
 			// 
 			// radioButton6
 			// 
 			this->radioButton6->AutoSize = true;
 			this->radioButton6->Location = System::Drawing::Point(3, 113);
 			this->radioButton6->Name = L"radioButton6";
-			this->radioButton6->Size = System::Drawing::Size(103, 20);
+			this->radioButton6->Size = System::Drawing::Size(108, 20);
 			this->radioButton6->TabIndex = 2;
 			this->radioButton6->TabStop = true;
-			this->radioButton6->Text = L"radioButton6";
+			this->radioButton6->Text = L"Stereometry3";
 			this->radioButton6->UseVisualStyleBackColor = true;
+			this->radioButton6->CheckedChanged += gcnew System::EventHandler(this, &MyForm1::radioButton6_CheckedChanged);
 			// 
 			// radioButton7
 			// 
 			this->radioButton7->AutoSize = true;
 			this->radioButton7->Location = System::Drawing::Point(3, 168);
 			this->radioButton7->Name = L"radioButton7";
-			this->radioButton7->Size = System::Drawing::Size(103, 20);
+			this->radioButton7->Size = System::Drawing::Size(108, 20);
 			this->radioButton7->TabIndex = 3;
 			this->radioButton7->TabStop = true;
-			this->radioButton7->Text = L"radioButton7";
+			this->radioButton7->Text = L"Stereometry4";
 			this->radioButton7->UseVisualStyleBackColor = true;
+			this->radioButton7->CheckedChanged += gcnew System::EventHandler(this, &MyForm1::radioButton7_CheckedChanged);
 			// 
 			// label2
 			// 
@@ -217,6 +220,7 @@ namespace lab1task2 {
 			this->Name = L"MyForm1";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Mathematical handbook";
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &MyForm1::MyForm_FormClosing);
 			this->tableLayoutPanel2->ResumeLayout(false);
 			this->tableLayoutPanel2->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
@@ -242,7 +246,7 @@ namespace lab1task2 {
 	}
 	private: System::Void radioButton4_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 		if (radioButton4->Checked == true) {
-			pictureBox1->Image = System::Drawing::Bitmap::FromFile("1.png");
+			pictureBox1->Image = System::Drawing::Bitmap::FromFile("theone.png");
 			pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 		}
 	}
@@ -260,5 +264,26 @@ namespace lab1task2 {
 		}
 	}
 
+	private: System::Void radioButton5_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (radioButton5->Checked == true) {
+			pictureBox1->Image = System::Drawing::Bitmap::FromFile("two.png");
+			pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+		}
+	}
+	
+	private: System::Void radioButton6_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (radioButton6->Checked == true) {
+			pictureBox1->Image = System::Drawing::Bitmap::FromFile("three.png");
+			pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+		}
+	}
+
+	private: System::Void radioButton7_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (radioButton7->Checked == true) {
+			pictureBox1->Image = System::Drawing::Bitmap::FromFile("the.png");
+			pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+		}
+
+	}
 };
 }
